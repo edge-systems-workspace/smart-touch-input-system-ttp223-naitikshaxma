@@ -12,25 +12,6 @@
 
  // TODO 1:
 int touchPin = 3;
-int ledPin = 13;
-
-void setup() {
-    pinMode(touchPin, INPUT);
-    pinMode(ledPin, OUTPUT);
-    Serial.begin(9600);
-}
-
-void loop() {
-    int touchState = digitalRead(touchPin);
-    if (touchState == HIGH) {
-        digitalWrite(ledPin, HIGH);
-        Serial.println("Touch Detected");
-    } else {
-        digitalWrite(ledPin, LOW);
-        Serial.println("No Touch");
-    }
-    delay(200);
-}
 
  // TODO 2:
 int ledPin = 13;
