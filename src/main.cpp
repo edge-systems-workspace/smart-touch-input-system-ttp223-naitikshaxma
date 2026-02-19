@@ -11,18 +11,37 @@
  */
 
  // TODO 1:
- // Define touch sensor digital pin (Use pin 2)
+int touchPin = 3;
+int ledPin = 13;
+
+void setup() {
+    pinMode(touchPin, INPUT);
+    pinMode(ledPin, OUTPUT);
+    Serial.begin(9600);
+}
+
+void loop() {
+    int touchState = digitalRead(touchPin);
+    if (touchState == HIGH) {
+        digitalWrite(ledPin, HIGH);
+        Serial.println("Touch Detected");
+    } else {
+        digitalWrite(ledPin, LOW);
+        Serial.println("No Touch");
+    }
+    delay(200);
+}
 
  // TODO 2:
- // Create variable to store touch state
+int ledPin = 13;
 
 void setup() {
 
     // TODO 3:
-    // Initialize Serial communication (9600 baud rate)
+    pinMode(touchPin, INPUT);
 
     // TODO 4:
-    // Configure touch pin as INPUT
+    pinMode(ledPin, OUTPUT);
 
     // TODO 5:
     // Print system initialization message
